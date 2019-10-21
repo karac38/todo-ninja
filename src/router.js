@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router'
-import Home from './Views/Home.vue'
+import Dashboard from './Views/Dashboard.vue'
 
 export const router = new VueRouter({
     mode: "history",
@@ -7,13 +7,18 @@ export const router = new VueRouter({
     routes:[
         {
             path: '/',
-            name: 'home',
-            component: Home
+            name: 'dashboard',
+            component: Dashboard
         },
         {
-            path: '/about',
-            name: 'about',
-            component: () => import(/*webpackChunkName: "about"*/ './Views/About.vue')
+            path: '/projects',
+            name: 'projects',
+            component: () => import(/*webpackChunkName: "about"*/ './Views/Projects.vue')
+        },
+        {
+            path: '/team',
+            name: 'team',
+            component: () => import(/*webpackChunkName: "team"*/ './Views/Team.vue')
         }
     ]
 })
